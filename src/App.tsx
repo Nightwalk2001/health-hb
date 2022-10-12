@@ -1,11 +1,5 @@
 import {useEffect, useState} from "react"
 
-const Name = () => {
-    return <div className={"absolute left-6 top-28 text-gray-50 text-xl"}>
-**威
-    </div>
-}
-
 const Time = () => {
     const [time, setTime] = useState<Date>(new Date())
 
@@ -22,7 +16,7 @@ const Time = () => {
         const m = time.getMonth()
         const d = time.getDay()
 
-        return y + "-" + m + "-" + d
+        return m + "月" + d + "日"
     }
     const hm = () => {
         const h = time.getHours()
@@ -30,9 +24,11 @@ const Time = () => {
         return h + ":" + m
     }
     // .slice(2, 8)
-    return  <div
-        className={"absolute left-1/2 -translate-x-1/2 top-48 whitespace-nowrap font-semibold"}>
-        {day()} {hm()}:<span className={"text-sky-400 text-lg"}>{time.getSeconds()}</span>
+    return  <div className={"absolute left-1/2 -translate-x-1/2 top-[175px] w-[300px] text-center bg-white"}>
+        <div
+            className={"text-4xl whitespace-nowrap font-semibold"}>
+            {day()} {hm()}:{time.getSeconds()}
+        </div>
     </div>
     // <span>{format(time, "yyyy-MM-dd HH:mm:SS")}</span>
 
@@ -41,7 +37,7 @@ const Time = () => {
 function App() {
 
     return <div className={"relative"}>
-        <Name/>
+        {/*<Name/>*/}
         <Time/>
         <img src={"bg.jpg"} alt={""}/>
     </div>
