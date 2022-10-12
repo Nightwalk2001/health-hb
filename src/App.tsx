@@ -26,7 +26,7 @@ const Time = () => {
         return fh + ":" + fm
     }
     // .slice(2, 8)
-    return  <div className={"absolute left-1/2 -translate-x-1/2 top-[175px] w-[300px] text-center bg-white"}>
+    return  <div className={"absolute left-1/2 -translate-x-1/2 top-[50px] w-[300px] text-center bg-white"}>
         <div
             className={"text-4xl whitespace-nowrap font-semibold"}>
             {day()} {hm()}:{time.getSeconds()}
