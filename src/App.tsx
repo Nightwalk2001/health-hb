@@ -12,20 +12,20 @@ const Time = () => {
     })
 
     const day = () => {
-        const m = time.getUTCMonth()
+        const m = time.getUTCMonth() + 1
         const d = time.getUTCDate()
 
-        return m + "月" + d + "日"
+        return m  + "月" + d + "日"
     }
     const hm = () => {
         const h = time.getHours()
         const m = time.getMinutes()
         const fh = h < 10 ? "0" + h : h
-        const fm = m < 10? "0" + m: m
+        const fm = m < 10 ? "0" + m : m
         return fh + ":" + fm
     }
     // .slice(2, 8)
-    return  <div className={"absolute left-1/2 -translate-x-1/2 top-[175px] w-[300px] text-center bg-white"}>
+    return <div className={"absolute left-1/2 -translate-x-1/2 top-[175px] w-[300px] text-center bg-white"}>
         <div
             className={"text-gray-700 text-4xl whitespace-nowrap font-semibold"}>
             {day()} {hm()}:{time.getSeconds()}
