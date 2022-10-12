@@ -12,8 +12,8 @@ const Time = () => {
     })
 
     const day = () => {
-        const m = time.getMonth()
-        const d = time.getDay()
+        const m = time.getUTCMonth()
+        const d = time.getUTCDate()
 
         return m + "月" + d + "日"
     }
