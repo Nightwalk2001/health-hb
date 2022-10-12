@@ -17,6 +17,12 @@ const Time = () => {
 
         return m  + "月" + d + "日"
     }
+    const prev = () => {
+        const m = time.getUTCMonth() + 1
+        const d = time.getUTCDate() - 1
+
+        return m  + "月" + d + "日"
+    }
     const hm = () => {
         const h = time.getHours()
         const m = time.getMinutes()
@@ -25,13 +31,21 @@ const Time = () => {
         return fh + ":" + fm
     }
     // .slice(2, 8)
-    return <div className={"absolute left-1/2 -translate-x-1/2 top-[175px] w-[300px] text-center bg-white"}>
-        <div
-            className={"text-gray-700 text-4xl whitespace-nowrap font-semibold"}>
-            {day()} {hm()}:{time.getSeconds()}
+    return <>
+        <div className={"absolute left-1/2 -translate-x-1/2 top-[175px] w-[300px] text-center bg-white"}>
+            <div
+                className={"text-gray-700 text-4xl whitespace-nowrap font-semibold"}>
+                {day()} {hm()}:{time.getSeconds()}
+            </div>
         </div>
-    </div>
-    // <span>{format(time, "yyyy-MM-dd HH:mm:SS")}</span>
+
+        <div className={"absolute left-[173px] top-[682px] w-[70px] text-center bg-white"}>
+            <div
+                className={"text-gray-700 whitespace-nowrap font-semibold"}>
+                {day()}
+            </div>
+        </div>
+    </>
 
 }
 
