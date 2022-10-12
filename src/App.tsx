@@ -21,7 +21,9 @@ const Time = () => {
     const hm = () => {
         const h = time.getHours()
         const m = time.getMinutes()
-        return h + ":" + m
+        const fh = h < 10 ? "0" + h : h
+        const fm = m < 10? "0" + m: m
+        return fh + ":" + fm
     }
     // .slice(2, 8)
     return  <div className={"absolute left-1/2 -translate-x-1/2 top-[175px] w-[300px] text-center bg-white"}>
